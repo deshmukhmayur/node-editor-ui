@@ -1,0 +1,50 @@
+.node {
+  /* Variables */
+  --side-padding: .5rem;
+  --separation-padding: .5rem;
+  --border-radius: .5rem;
+  --node-header-bg-color: #888;
+  --node-header-color: #fff;
+
+  border-radius: var(--border-radius);
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.16), 0 .25rem .75rem rgba(0,0,0,0.16);
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--separation-padding);
+  transition: box-shadow 120ms ease;
+}
+.node[data-selected="true"] {
+  box-shadow: 0 0 1rem rgba(0,0,0,0.16), 0 .5rem 1rem rgba(0,0,0,0.32);
+}
+
+.node > header {
+  padding-inline: var(--side-padding);
+  line-height: 2.25rem;
+  background: var(--node-header-bg-color);
+  text-align: center;
+  font-weight: 500;
+  color: var(--node-header-color);
+  pointer-events: none;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.node > div {
+  padding-inline: var(--side-padding);
+  padding-top: var(--separation-padding);
+  font-size: .875rem;
+  position: relative;
+}
+.node > div label {
+  color: #555;
+  margin-bottom: .25rem;
+  display: inline-block;
+}
+
+.node input, .node select {
+  width: 100%;
+  font-family: inherit;
+  border-radius: .25rem;
+  border: 1px solid #aaa;
+}
